@@ -940,7 +940,7 @@ tests/app_test.py ......                                                    [100
 
 1. After logging in to Render, go to "Dashboard" to create a web service to deploy the Flaskr-tdd project.
    
-![](images/image-5.png)
+<img width="1024" height="396" alt="Screenshot 2026-10-16 at 2 26 14 PM" src="https://github.com/user-attachments/assets/62b6e7e6-da6f-447f-a774-1e4691444778" />
 
 2. To deploy the project, you need to connect to your GitHub repository by selecting "Build and deploy from a Git repository".
 
