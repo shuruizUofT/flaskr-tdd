@@ -948,21 +948,20 @@ tests/app_test.py ......                                                    [100
 
 <img width="986" height="276" alt="Screenshot 2026-10-16 at 2 26 54 PM" src="https://github.com/user-attachments/assets/767a42a6-e9d7-40ce-b64f-431ae928cc78" />
 
-3. In Deployment settings, select the branch you want to deploy. In this case, we will deploy the main branch. Configure the Build command to specify the packages required and the Start command to specify the entry for starting the processes (i.e., app.py in the project for Flaskr-tdd).
+3. In Deployment settings, select the branch you want to deploy. In this case, we will deploy the main branch. Configure the Build command to specify the packages required and the Start command to specify the entry for starting the processes (i.e., app.py in the project for Flaskr-tdd). Hint: change the start command to from app:app to project.app:app
 
 <img width="1480" height="616" alt="Screenshot 2026-10-15 at 2 10 53 PM" src="https://github.com/user-attachments/assets/2d0412fc-ece4-4eb2-92d3-42706b913af8" />
 
-6. Choose the free plan, you can create the web service on Render
+4. Choose the free plan, you can create the web service on Render.
 
 <img width="1456" height="658" alt="Screenshot 2026-10-15 at 2 11 48 PM" src="https://github.com/user-attachments/assets/30876a16-f8eb-46ae-80d7-3ddc5837f07b" />
 
-7. Now with the web service created, go to "Environment" to add an environment variable for specifying the Python version. In this case, we will use Python 3.14.0 in Flaskr-tdd project (or the specific Python version you are using for your project)
+5. Now with the web service created, go to "Environment" to add an environment variable for specifying the Python version. In this case, we will use Python 3.14.0 in Flaskr-tdd project (or the specific Python version you are using for your project).
 
 <img width="1464" height="599" alt="Screenshot 2026-10-16 at 2 47 26 PM" src="https://github.com/user-attachments/assets/26fe4d11-5f15-4e3c-a77f-6c1427b92e2e" />
 
-8. The deployment should start automatically. You can check the deployment status in Logs. Once the deployment is completed, you can access the web service by clicking on the URL URL under the project name.
+6. The deployment should start automatically. You can check the deployment status in Logs. Once the deployment is completed, you can access the web service by clicking on the URL URL under the project name.
 
-<img width="1012" height="495" alt="Screenshot 2026-10-16 at 2 49 32 PM" src="https://github.com/user-attachments/assets/2d3e23f7-f7b9-4b6f-813f-6ab53c6a467b" />
 <img width="1171" height="391" alt="Screenshot 2026-10-15 at 2 18 18 PM" src="https://github.com/user-attachments/assets/afe5b110-d51a-4db2-bf16-ce712ab44f5e" />
 
 
