@@ -942,33 +942,30 @@ tests/app_test.py ......                                                    [100
    
 <img width="1024" height="396" alt="Screenshot 2026-10-16 at 2 26 14 PM" src="https://github.com/user-attachments/assets/62b6e7e6-da6f-447f-a774-1e4691444778" />
 
-2. To deploy the project, you need to connect to your GitHub repository by selecting "Build and deploy from a Git repository".
+2. To deploy the project, either connect your GitHub account, or make provide the link of your public GitHub repository containing your code.
 
-![](images/image-17.png)
+<img width="983" height="231" alt="Screenshot 2026-10-16 at 2 37 11 PM" src="https://github.com/user-attachments/assets/e8c5e79d-c7f1-4a13-993b-407ed28557f6" />
 
-3. Select "connect to GitHub" and authorize Render to access your repositories of choice on GitHub.
+<img width="986" height="276" alt="Screenshot 2026-10-16 at 2 26 54 PM" src="https://github.com/user-attachments/assets/767a42a6-e9d7-40ce-b64f-431ae928cc78" />
 
-![](images/image-7.png)
+3. In Deployment settings, select the branch you want to deploy. In this case, we will deploy the main branch. Configure the Build command to specify the packages required and the Start command to specify the entry for starting the processes (i.e., app.py in the project for Flaskr-tdd).
 
-4. Connect the repository you want to deploy to Render.
-
-![](images/image-8.png)
-
-5. In Deployment settings, select the branch you want to deploy. In this case, we will deploy the main branch. Configure the Build command to specify the packages required and the Start command to specify the entry for starting the processes (i.e., app.py in the project for Flaskr-tdd).
-
-![](images/image-9.png)
+<img width="1480" height="616" alt="Screenshot 2026-10-15 at 2 10 53 PM" src="https://github.com/user-attachments/assets/2d0412fc-ece4-4eb2-92d3-42706b913af8" />
 
 6. Choose the free plan, you can create the web service on Render
 
-![](images/image-2.png)
+<img width="1456" height="658" alt="Screenshot 2026-10-15 at 2 11 48 PM" src="https://github.com/user-attachments/assets/30876a16-f8eb-46ae-80d7-3ddc5837f07b" />
 
-7. Now with the web service created, go to "Environment" to add an environment variable for specifying the Python version. In this case, we will use Python 3.12.0 in Flaskr-tdd project (or the specific Python version you are using for your project)
+7. Now with the web service created, go to "Environment" to add an environment variable for specifying the Python version. In this case, we will use Python 3.14.0 in Flaskr-tdd project (or the specific Python version you are using for your project)
 
-![](images/image-15.png)
+<img width="1464" height="599" alt="Screenshot 2026-10-16 at 2 47 26 PM" src="https://github.com/user-attachments/assets/26fe4d11-5f15-4e3c-a77f-6c1427b92e2e" />
 
 8. The deployment should start automatically. You can check the deployment status in Logs. Once the deployment is completed, you can access the web service by clicking on the URL URL under the project name.
 
-![](images/image-13.png)
+<img width="1012" height="495" alt="Screenshot 2026-10-16 at 2 49 32 PM" src="https://github.com/user-attachments/assets/2d3e23f7-f7b9-4b6f-813f-6ab53c6a467b" />
+<img width="1171" height="391" alt="Screenshot 2026-10-15 at 2 18 18 PM" src="https://github.com/user-attachments/assets/afe5b110-d51a-4db2-bf16-ce712ab44f5e" />
+
+
 ![](images/image-14.png)
 
 
@@ -1530,23 +1527,28 @@ Test it out locally again. If all is well, commit your code and push to GitHub.
 ### Set up the database
 1. For deployment on Render, we can use [Postgres](https://www.postgresql.org/), which is a production grade database. Render offers Postgres database hosting service for 90 days for free. We will use the Postgres database to store the data for the Flaskr-tdd project.
 
-![](images/image.png)
+<img width="1003" height="500" alt="Screenshot 2026-10-16 at 2 50 04 PM" src="https://github.com/user-attachments/assets/e0025a83-f685-4b01-9985-9d8f08cfaf1b" />
+
 
 2. Enter the Name for the Postgres instance and database
 
-![](images/image-1.png)
+<img width="1485" height="774" alt="Screenshot 2026-10-15 at 4 39 49 PM" src="https://github.com/user-attachments/assets/0349cb32-14c0-4d6f-aeff-925fec1b673b" />
+
 
 3. Select the free plan and create the database
 
-![](images/image-2.png)
+<img width="1465" height="780" alt="Screenshot 2026-10-15 at 4 40 16 PM" src="https://github.com/user-attachments/assets/2b95c0f4-172c-4982-8e4e-5a960ef927bf" />
+
 
 4. Now you have a Postgres database on Render.
 
-![](images/image-3.png)
+<img width="1167" height="710" alt="Screenshot 2026-10-16 at 2 53 25 PM" src="https://github.com/user-attachments/assets/4bee0d4d-c234-4961-8256-79d4bc9c2468" />
+
 
 5. Copy the External Database URL and Internal Database URL for later use
 
-![](images/image-4.png)
+<img width="1099" height="484" alt="Screenshot 2026-10-15 at 4 44 00 PM" src="https://github.com/user-attachments/assets/c655ae48-8c65-453c-8f74-ce9e6e42aed2" />
+
 
 ### Connect the database to the Flaskr-tdd project 
 1. To use the Postgres database, we need to update the app.py file in the Flaskr-tdd project. In the app.py file, update the SQLALCHEMY_DATABASE_URI variable to use the value of the DATABASE_URL environment variable if it's available. Otherwise, it will use the SQLite URL. (Important Note: Make sure to import os in the app.py file)
@@ -1574,11 +1576,11 @@ $env:DATABASE_URL="the value of the external database URL you copied earlier"
 5. Commit and push your code to the GitHub
 6. Go to the Render dashboard. We need to set up the database for the Flaskr-tdd project. In your web service settings on Render for the application, create an environment variable named DATABASE_URL and set its value to the Internal Database URL saved in the previous step.
 
-![](images/image-15.png)
+<img width="1467" height="401" alt="Screenshot 2026-10-16 at 2 56 56 PM" src="https://github.com/user-attachments/assets/929c30ec-8265-4d39-8ab7-fa1c459ad438" />
+
 
 7. The deployment should start automatically upon a new commit. Once the deployment is completed, you can access the web service by clicking on the URL under the project name.
 
-![](images/image-19.png)
 
 ## Linting and Code Formatting
 
